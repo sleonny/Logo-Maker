@@ -1,6 +1,5 @@
-const prompt = require("inquirer");
+const inquirer = require("inquirer");
 const fs = require("fs");
-const { default: inquirer } = require("inquirer");
 
 const shapes = [Circle, Triangle, Square];
 const colors = [
