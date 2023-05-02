@@ -56,14 +56,7 @@ inquirer
     const shape = new shapeClass(shapeColor);
 
     const svg = `
-    <svg width="300" height="200">
-      <g transform="translate(150,100)">
-        ${shape.render()}
-        <text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="${textColor}">${text}</text>
-      </g>
-    </svg>
-  `;
-
+    <svg width="300" height="200"><g transform="translate(150,100)">${shape.render()}<text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="${textColor}">${text}</text></g></svg>`;
     fs.writeFileSync("logo.svg", svg);
     console.log("Generated logo.svg");
   });
