@@ -1,9 +1,16 @@
-const inquirer = require("inquirer");
-const fs = require("fs");
+import inquirer from "inquirer";
+import fs from "fs";
+import shapes from "./shapes.js";
 
-const { Circle, Triangle, Square } = require("./lib/shapes");
+const circle = new shapes.Circle(10);
+console.log(circle.toString()); // output: Circle with radius 10
 
-const shapes = [Circle, Triangle, Square];
+const square = new shapes.Square(5);
+console.log(square.toString()); // output: Square with side length 5
+
+const triangle = new shapes.Triangle(3, 4, 5);
+console.log(triangle.toString()); // output: Triangle with sides 3, 4, and 5
+
 const colors = [
   "red",
   "green",

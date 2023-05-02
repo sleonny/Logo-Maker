@@ -15,6 +15,9 @@ class Triangle extends Shape {
   render() {
     return `<svg width="100" height="100"><polygon points="0,100 50,0 100,100" fill="${this.color}" /></svg>`;
   }
+  setColor(color) {
+    this.color = color;
+  }
 }
 
 class Circle extends Shape {
@@ -37,6 +40,9 @@ class Square extends Shape {
 
   render() {
     return `<svg width="100" height="100"><rect x="0" y="0" width="100" height="100" fill="${this.color}" /></svg>`;
+  }
+  setColor(color) {
+    this.color = color;
   }
 }
 
