@@ -1,29 +1,6 @@
-import inquirer from "inquirer";
-import fs from "fs";
-import shapes from "./shapes.js";
-
-const circle = new shapes.Circle(10);
-console.log(circle.toString()); // output: Circle with radius 10
-
-const square = new shapes.Square(5);
-console.log(square.toString()); // output: Square with side length 5
-
-const triangle = new shapes.Triangle(3, 4, 5);
-console.log(triangle.toString()); // output: Triangle with sides 3, 4, and 5
-
-const colors = [
-  "red",
-  "green",
-  "blue",
-  "yellow",
-  "orange",
-  "purple",
-  "black",
-  "grey",
-  "white",
-  "indigo",
-  "violet",
-];
+const inquirer = require("inquirer");
+const fs = require("fs");
+const { Circle, Triangle, Square } = require("./lib/shapes");
 
 inquirer
   .prompt([
@@ -56,14 +33,39 @@ inquirer
     },
   ])
 
-  .then((answers) => {
-    const { text, textColor, shapeIndex, shapeColor } = answers;
+  .then((data) => {
+    let shape;
+    if (data.shapeIndex === "Circle") {
+      shape = new Circle(
+        data.text,
+        data.textColor,
+        data.shapeIndex,
+        data.shapeColor
+      );
+    } else if (data.shapeIndex === "Triangle") {
+      shape = new Triangle(
+        data.text,
+        data.textColor,
+        data.shapeIndex,
+        data.shapeColor
+      );
+    } else if (data.shape === "Square") {
+      shape = new Square(
+        data.text,
+        data.textColor,
+        data.shapeIndex,
+        data.shapeColor
+      );
+    }
 
-    const shapeClass = shapes[shapeIndex];
-    const shape = new shapeClass(shapeColor);
+    const logo = generateSVG(shape);
 
-    const svg = `
-    <svg width="300" height="200"><g transform="translate(150,100)">${shape.render()}<text x="0" y="0" dominant-baseline="middle" text-anchor="middle" fill="${textColor}">${text}</text></g></svg>`;
-    fs.writeFileSync("logo.svg", svg);
-    console.log("Generated logo.svg");
+    fs.writeFile("logo.svg", logo, (err) =>
+      err ? console.log(err) : console.log("generated logo")
+    );
   });
+
+function generateSVG(shape) {
+  const svg = `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">${shape.render()}</svg>`;
+  return svg;
+}
