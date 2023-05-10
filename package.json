@@ -1,7 +1,6 @@
 {
   "name": "logo-maker",
   "version": "1.0.0",
-  "type": "module",
   "description": "A command-line tool for generating logos",
   "main": "index.js",
   "scripts": {

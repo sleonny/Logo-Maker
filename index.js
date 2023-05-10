@@ -2,6 +2,8 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const { Circle, Triangle, Square } = require("./lib/shapes");
 
+const colors = ["red", "orange", "yellow", "green", "blue", "black", "white"];
+
 inquirer
   .prompt([
     {
@@ -35,21 +37,21 @@ inquirer
 
   .then((data) => {
     let shape;
-    if (data.shapeIndex === "Circle") {
+    if (data.shapeIndex === 0) {
       shape = new Circle(
         data.text,
         data.textColor,
         data.shapeIndex,
         data.shapeColor
       );
-    } else if (data.shapeIndex === "Triangle") {
+    } else if (data.shapeIndex === 1) {
       shape = new Triangle(
         data.text,
         data.textColor,
         data.shapeIndex,
         data.shapeColor
       );
-    } else if (data.shape === "Square") {
+    } else if (data.shapeIndex === 2) {
       shape = new Square(
         data.text,
         data.textColor,
@@ -59,7 +61,6 @@ inquirer
     }
 
     const logo = generateSVG(shape);
-
     fs.writeFile("logo.svg", logo, (err) =>
       err ? console.log(err) : console.log("generated logo")
     );
