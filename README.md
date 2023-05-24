@@ -22,7 +22,9 @@ This web app was created to quickly and easily generate a very basic logo to sav
 
   To generate a basic logo to save money on graphic design
 
-  ## License
+  ## Demonstration
+
+  PLACEHOLDER
 
   ## License
 
