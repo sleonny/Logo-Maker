@@ -1,20 +1,48 @@
-# Logo-Maker
+# SVG Logo Generator
 
-AS a freelance web developer
-I WANT to generate a simple logo for my projects
-SO THAT I don't have to pay a graphic designer
+## Description
 
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for text
-THEN I can enter up to three characters
-WHEN I am prompted for the text color
-THEN I can enter a color keyword (OR a hexadecimal number)
-WHEN I am prompted for a shape
-THEN I am presented with a list of shapes to choose from: circle, triangle, and square
-WHEN I am prompted for the shape's color
-THEN I can enter a color keyword (OR a hexadecimal number)
-WHEN I have entered input for all the prompts
-THEN an SVG file is created named `logo.svg`
-AND the output text "Generated logo.svg" is printed in the command line
-WHEN I open the `logo.svg` file in a browser
-THEN I am shown a 300x200 pixel image that matches the criteria I entered
+This web app was created to quickly and easily generate a very basic logo to save money on graphic design. Using inquirer prompts in the command line a basic shape with lettering is created as a .svg file.
+
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+  ## Installation
+
+  To install and use please npm install the "inquirer", "jest" & "color-name" packages then npm index.js to begin.
+
+  ## Usage
+
+  To generate a basic logo to save money on graphic design
+
+  ## License
+
+  ## License
+
+  ![badge](https://img.shields.io/badge/license-MIT License-brightgreen)
+  This application is covered by the MIT License license.
+
+  ## Credits
+
+  Inquirer, Jest, Color-Name, VS Code Editor, w3 Schools, ChatGPT
+
+  ## Tests
+
+  To test please npm test in the command line to ensure correct rendering.
+
+  ## How to Contribute
+
+  To contribute please fork the repo @ https://github.com/sleonny/Logo-Maker then submit a pull request. Thanks!
+
+  ## Questions?
+
+  Come see me on GitHub @ [sleonny](https://github.com/sleonny);
+  Or
+  Email me @ leonardmsean@gmail.com
