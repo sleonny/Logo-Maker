@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { Circle, Triangle, Square } = require("./lib/shapes");
+const colorName = require("color-name");
 
 const colors = ["red", "orange", "yellow", "green", "blue", "black", "white"];
 
@@ -12,10 +13,16 @@ inquirer
       message: "Enter text (up to 3 characters):",
     },
     {
-      type: "list",
+      type: "input",
       name: "textColor",
-      message: "Choose text color: ",
-      choices: colors,
+      message: "Please choose a text color:",
+      validate: (input) => {
+        if (colorName[input.toLowerCase()]) {
+          return true;
+        } else {
+          return "Invalid color. Please enter a valid color name.";
+        }
+      },
     },
     {
       type: "list",
@@ -28,10 +35,16 @@ inquirer
       ],
     },
     {
-      type: "list",
+      type: "input",
       name: "shapeColor",
       message: "Choose a shape color: ",
-      choices: colors,
+      validate: (input) => {
+        if (colorName[input.toLowerCase()]) {
+          return true;
+        } else {
+          return "Invalid color. Please enter a valid color name.";
+        }
+      },
     },
   ])
 
@@ -62,7 +75,7 @@ inquirer
 
     const logo = generateSVG(shape);
     fs.writeFile("logo.svg", logo, (err) =>
-      err ? console.log(err) : console.log("generated logo")
+      err ? console.log(err) : console.log("Generated logo.svg")
     );
   });
 
