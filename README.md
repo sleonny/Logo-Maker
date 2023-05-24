@@ -24,7 +24,7 @@ This web app was created to quickly and easily generate a very basic logo to sav
 
   ## Demonstration
 
-  PLACEHOLDER
+  https://drive.google.com/file/d/1adGkWoaWRZu5rQE88-dsHDG5WZuD5-gu/view
 
   ## License
 
